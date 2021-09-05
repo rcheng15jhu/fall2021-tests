@@ -107,7 +107,7 @@ raise 'ASSIGN01_DIR environment variable must be set' if !ENV.has_key?('ASSIGN01
 exe_dir = ENV['ASSIGN01_DIR']
 
 # make sure executable exists
-exe = "#{exe_dir}/minicalc"
+exe = "#{exe_dir}/minicalc.exe"
 raise "#{exe} is not executable" if !FileTest.executable?(exe)
 
 # see if there an option argument was specified on the command line

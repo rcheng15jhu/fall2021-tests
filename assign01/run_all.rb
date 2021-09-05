@@ -17,7 +17,9 @@ testcases.each do |testname|
   #puts testname
   print "#{testname}..."
   STDOUT.flush
-  rc = system("./run_test.rb #{testname} > /dev/null 2> /dev/null")
+  #rc = system("./run_test.rb #{testname} > /dev/null 2> /dev/null")
+  #rc = system("./run_test.rb #{testname} > ./dev/clobbered_stdout 2> ./dev/clobbered_stderr")
+  rc = system("./run_test.rb #{testname} > ./dev/#{testname}_stdout 2> ./dev/#{testname}_stderr")
   if rc
     puts "passed!"
     num_passed += 1
